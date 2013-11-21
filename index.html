@@ -4,60 +4,43 @@
     <meta charset="UTF-8">
     <title>Desesperados</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.png">
 
     <style>
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-        }
 
-        .homepage {
-            display: table;
-            height: 100%;
-            width: 100%;
-            position: relative;
-            background: url(img/desperate_bg.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-        
-        .vert-text {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-        }
-
-        .vert-text h1 {
-          padding: 0;
-          margin: 0;
-          font-size: 5.5em;
-          font-weight: 700;
-          color:#DCDCDC;
-        }
-        .vert-text h3 {
-          font-size: 3em;
-          margin-bottom: 50px;
-          color:#DCDCDC;
-        }
-        .vert-text .btn {
-            font-size: 36px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
     </style>
 
 </head>
 <body>
     <div class="homepage">
         <div class="vert-text">
-            <h1>Cassio Cardoso</h1>
-            <h3>Front End Developer</h3>
-            <a href="#about" class="btn btn-lg btn-danger">DESESPERADOS</a>
+            <h1>Desesperados</h1>
+            <br>
+            <div class="container">
+                <div class="row form">
+                    <div class="col-lg-8 col-lg-offset2 text-center">
+                        <form action="#" id="form_login" name="form_login" class="form-horizontal"role="form">
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    <a href="#" class="btn btn-lg btn-danger"><strong>LOGIN</strong></a>
+                                </div>
+                            </div>
+                            <small><a href="signup.html" class="signup_link">Ainda não é cadastrado? Clique aqui.</a></small>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
