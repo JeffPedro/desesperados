@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <form action="#" role="form">
-                    <h1><strong>Cadastro</strong></h1>
+                    <h1><strong>Cadastro de Usuários</strong></h1>
                     <hr>
                     <div class="form-group">
                         <label for="name" class="col-lg-2 control-label text-right">Nome Completo:</label>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="password" class="col-lg-2 control-label text-right">Password:</label>
+                        <label for="password" class="col-lg-2 control-label text-right">Senha:</label>
                         <div class="col-lg-10">
                             <input type="password" class="form-control" id="password" placeholder="Password" required>
                         </div>
@@ -48,13 +48,25 @@
                     <div class="form-group">
                         <label for="university" class="col-lg-2 control-label text-right">Universidade:</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="university" placeholder="Universidade" required>
+                            <select name="university" id="university" class="form-control">
+                                <option value="univap">UNIVAP - Universidade do Vale do Paraíba</option>
+                                <option value="etep">ETEP Faculdades</option>
+                                <option value="unip">UNIP - Universidade Paulista</option>
+                                <option value="bilac">BILAC Faculdade</option>
+                                <option value="anhanguera">Anhanguera Faculdade</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="course" class="col-lg-2 control-label text-right">Curso:</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="course" placeholder="Curso" required>
+                            <select name="course" id="course" class="form-control">
+                                <option value="eng_comp">Engenharia da Computação</option>
+                                <option value="eng_eletr">Engenharia Elétrica</option>
+                                <option value="eng_aero">Engenharia Aeronáutica</option>
+                                <option value="eng_civil">Engenharia Civil</option>
+                                <option value="eng_amb">Engenharia Ambiental</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -76,6 +88,7 @@
             </div>
         </div>
     </div>
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>
