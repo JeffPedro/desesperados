@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESESPERADOS - Uploads</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.png">
+</head>
+<body>
+	<div id='carregando' style='display:none'>
+		<img alt="carre" src="../img/loading/ajax-loading_.gif">
+  	</div>
+
+ 	<div id='content'>
+    	<h1>Upload</h1>
+    	<div id='form'>
+	  		<form id='formUpload' name='formUpload' action='upload-arquivo.php' method='post' enctype='multipart/form-data'>
+			  	<fieldset>
+		            <legend>Titulo:</legend>
+		            <input type='text' name='titulo' />
+		        </fieldset>
+		        <fieldset>
+		            <legend>Descrição:</legend>
+		            <textarea rows='4' cols='50' id='descricao'></textarea>
+		        </fieldset>
+		        <fieldset>
+						<legend>Selecione a materia:</legend>
+						<select name='cboMaterias' id='cboMaterias'></select>
+			    </fieldset>
+			  	<fieldset id='arquivos'>
+		            <p><label for='Enviar arquivo'>Enviar arquivo:</label></p>
+		            <input type='file' name='arquivo' id='arquivo'/>
+		            <button type='button' id='btnAdd' onClick=addArquivo()>+</button>
+		        </fieldset>
+			  	<input type='submit' name='Enviar' value='Enviar' />
+			  	<input type="button" onclick="formReset()" value="Reset">
+	  		</form>
+  		</div>
+   	</div> 
+
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+		var count = 1;
+
+		$(function() {
+			getListaMaterias();
+		});
+
+		function getListaMaterias(){
+			$('#carregando').fadeIn('slow');
+			$.post('../getListaMaterias', function(resultado) {
+				var linha = '<option>--</option>';
+				$.each(resultado, function() {
+					linha += '<option>' + this.materias + '</option>';
+				});
+
+				$('#cboMaterias').html(linha);
+			});
+			$('#carregando').fadeOut('slow');
+		}
+
+		function addArquivo(){
+			$('#arquivos').append("<input type='file' name='arquivo" + count + "' id='arquivo" + count + "' />");
+			count += 1;
+		}
+
+		function formReset(){
+			document.getElementById("formUpload").reset();
+			$('#arquivos').html("<p><label for='Enviar arquivo'>Enviar arquivo:</label></p> <input type='file' name='arquivo' id='arquivo'/><button type='button' id='btnAdd' onClick=addArquivo()>+</button>");
+			count = 0;
+		}
+	</script>
+</body>
+</html>
