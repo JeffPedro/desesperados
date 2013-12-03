@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESESPERADOS - Downloads</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="img/favicon.png">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div id='carregando' style='display:none'>
+					<img alt="carregando" src="img/ajax-loading.gif">
+  				</div>
+  				<div id='content'>
+	  				<div id='materias' class='titulo'>
+	  					<h1>Downloads</h1>
+						<fieldset>
+							<legend>Selecione a materia:</legend>
+							<select name="cboMaterias" id="cboMaterias"></select>
+						</fieldset>
+					</div>
+		    		<div id='downloads'>
+			    		<h1>Lista de Arquivos:</h1>
+	    				<ol id='listArquivos'></ol>
+	   				</div>
+  				</div>
+  			</div>
+		</div>
+	</div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+	<script>
+		$(function() {
+			getListaMaterias();
+		    $("#cboMaterias")
+				.change(function() {
+					getListaArquivos();
+			});
+		});
+
+		function getListaMaterias(){
+			$('#carregando').fadeIn('slow');
+			$.post('../getListaMaterias', function(resultado) {
+				var linha = '';
+				$.each(resultado, function() {
+					linha += '<option>' + this.materias +   '</option>';
+				});
+				$('#cboMaterias').html(linha);
+				getListaArquivos();
+			});
+			$('#carregando').fadeOut('slow');
+		}
+
+		function getListaArquivos(){
+			$('#carregando').fadeIn('slow');
+			$.post('../getListaMaterias', $('#cboMaterias').serialize() ,function(resultado) {
+				var linha = '';
+				$.each(resultado, function() {
+					linha += '<li><a href=\'' +  this.link + '\'>' + this.titulo +   '</li>';
+				});
+				$('#listArquivos').html(linha);
+			});
+			$('#carregando').fadeOut('slow');
+		}
+	</script>
+</body>
+</html>

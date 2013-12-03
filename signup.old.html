@@ -24,13 +24,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                <form action="#" role="form">
+                <form action="signup_user.php" role="form" method="post">
                     <h1><strong>Cadastro de Usuários</strong></h1>
                     <hr>
                     <div class="form-group">
                         <label for="name" class="col-lg-2 control-label text-right">Nome Completo:</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="name" placeholder="Nome Completo" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login" class="col-lg-2 control-label text-right">Login:</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="login" placeholder="username" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,14 +52,20 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="birthday" class="col-lg-2 control-label text-right">Nascimento:</label>
+                        <div class="col-lg-10">
+                            <input type="date" class="form-control" id="birthday" placeholder="DD/MM/AAAA"required>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="university" class="col-lg-2 control-label text-right">Universidade:</label>
                         <div class="col-lg-10">
                             <select name="university" id="university" class="form-control">
-                                <option value="univap">UNIVAP - Universidade do Vale do Paraíba</option>
-                                <option value="etep">ETEP Faculdades</option>
-                                <option value="unip">UNIP - Universidade Paulista</option>
-                                <option value="bilac">BILAC Faculdade</option>
-                                <option value="anhanguera">Anhanguera Faculdade</option>
+                                <option value="1">UNIVAP - Universidade do Vale do Paraíba</option>
+                                <option value="2">ETEP Faculdades</option>
+                                <option value="3">UNIP - Universidade Paulista</option>
+                                <option value="4">BILAC Faculdade</option>
+                                <option value="5">Anhanguera Faculdade</option>
                             </select>
                         </div>
                     </div>
@@ -61,11 +73,11 @@
                         <label for="course" class="col-lg-2 control-label text-right">Curso:</label>
                         <div class="col-lg-10">
                             <select name="course" id="course" class="form-control">
-                                <option value="eng_comp">Engenharia da Computação</option>
-                                <option value="eng_eletr">Engenharia Elétrica</option>
-                                <option value="eng_aero">Engenharia Aeronáutica</option>
-                                <option value="eng_civil">Engenharia Civil</option>
-                                <option value="eng_amb">Engenharia Ambiental</option>
+                                <option value="1">Engenharia da Computação</option>
+                                <option value="2">Engenharia Elétrica</option>
+                                <option value="3">Engenharia Aeronáutica</option>
+                                <option value="4">Engenharia Civil</option>
+                                <option value="5">Engenharia Ambiental</option>
                             </select>
                         </div>
                     </div>
