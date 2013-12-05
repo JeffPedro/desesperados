@@ -75,13 +75,13 @@ session_start();
     }
     window.onload=function(){
       $('btn_forum').onclick = function(){
-        window.location="forum.html";
+        window.location="forum.php";
       }
       $('btn_profile').onclick = function(){
         window.location="profile.html";
       }
       $('btn_downloads').onclick = function(){
-        window.location="downloads.html";
+        window.location="downloads.php";
       }
       $('btn_uploads').onclick = function(){
         window.location="uploads.html";

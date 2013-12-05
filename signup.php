@@ -1,10 +1,13 @@
 <?php
+session_start();
 require('banco.php');
 $faculdade = $mysqli->query("SELECT * FROM escola ");
 $curso =  $mysqli->query("SELECT * FROM curso ");
 
   if(isset($_POST['name'])){
-    
+    $mysqli->query("INSERT INTO usuario (nome,login,senha,id_escola,id_curso) VALUES ('".$_POST['name']."','".$_POST['email']."','".$_POST['password']."','".$_POST['university']."','".$_POST['course']."' );");
+		?><script>alert("Cadastro Realizado com Sucesso!!!");</script><?php
+	header("Location: index.php");
   }
 ?>
 <!doctype html>
@@ -34,7 +37,7 @@ $curso =  $mysqli->query("SELECT * FROM curso ");
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
-        <form action="#" role="form">
+        <form action="#" role="form" method="POST" >
           <h1><strong>Cadastro de Usuários</strong></h1>
           <hr>
           <div class="form-group">

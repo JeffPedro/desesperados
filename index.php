@@ -1,14 +1,15 @@
 <?php
-/*require("banco.php");
-require("session.php");
+session_start();
+require("banco.php");
   if(isset($_POST['email'])){
       $result = $mysqli->query("SELECT * FROM usuario WHERE login = '".$_POST['email']."' AND senha = '".$_POST['password']."' ");
       if($result->num_rows > 0 ){
         $campos = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $_SESSION["nome"] = $campos['nome'];
+        $_SESSION['id'] = $campos['id'];  
         header('Location: homepage.php');
       }
-  }*/
+  }
 ?>
 <!doctype html>
 <html lang="en">
